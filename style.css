@@ -1,0 +1,132 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f4e6; /* 乳白色背景 */
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+select, button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#timer {
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+#level {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 2px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  background-color: white;
+  transition: background-color 0.2s;
+}
+
+.cell:focus {
+  outline: none;
+  background-color: #e6f7ff;
+}
+
+.cell[readonly],
+.cell.fixed {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #333;
+}
+
+.cell.error {
+  background-color: #ffebee;
+}
+
+#message {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #d32f2f;
+  height: 20px;
+}
+
+#result {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.result-content {
+  text-align: center;
+}
+
+#next-level {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#next-level:hover {
+  background-color: #45a049;
+}
+
+/* 3x3 grid borders */
+.cell:nth-child(3n) {
+  border-right: 2px solid #333;
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54),
+.cell:nth-child(n+73):nth-child(-n+81) {
+  border-bottom: 2px solid #333;
+}
